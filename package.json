@@ -1,0 +1,20 @@
+{
+  "fitbit": {
+    "appUUID": "d0fa436a-5235-4269-bcdf-e6e1485f49e6",
+    "appType": "app",
+    "appDisplayName": "Cadence Coach",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#f44336",
+    "requestedPermissions": [
+      "access_activity"
+    ],
+    "i18n": {
+      "en": {
+        "name": "Cadence Coach"
+      },
+      "es": {
+        "name": "Entrenador de Cadencia"
+      }
+    }
+  }
+}
