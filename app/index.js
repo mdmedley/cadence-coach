@@ -30,8 +30,10 @@ function refreshCadence() {
   console.log("Weighted cadence: " + weightedCadence);
   prevSteps = newSteps;
   prevCadence = weightedCadence;
-  cadenceData.text = weightedCadence;
-  analyzeCadence(weightedCadence);
+
+  // Threshold weighted cadence to at least 60 steps per minute
+  cadenceData.text = weightedCadence > 60 ? weightedCadence : 0;
+  analyzeCadence(parseInt(cadenceData.text));
 }
 
 function analyzeCadence(cadence) {
