@@ -21,6 +21,10 @@ let targetCadence = 180;
 targetCadenceData.text = targetCadence;
 cadenceData.text = "--";
 
+function setTargetCadence(val) {
+  targetCadence = val;
+  targetCadenceData.text = targetCadence;
+}
 
 function refreshCadence() {
   newSteps = parseInt(today.local.steps); // Get current step count
@@ -66,6 +70,19 @@ messaging.peerSocket.onmessage = function(evt) {
 messaging.peerSocket.onerror = function(err) {
   // Handle any errors
   console.log("Connection error: " + err.code + " - " + err.message);
+}
+
+document.onkeypress = function(e) {
+  switch (e.key) {
+    case 'up':
+      setTargetCadence(targetCadence + 1);
+      break;
+    case 'down':
+      setTargetCadence(targetCadence - 1);
+      break;
+    default:
+      // not a key to respond to
+  }
 }
 
 refreshCadence();
