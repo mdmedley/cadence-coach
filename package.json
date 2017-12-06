@@ -4,7 +4,7 @@
     "appType": "app",
     "appDisplayName": "Cadence Coach",
     "iconFile": "resources/icon.png",
-    "wipeColor": "#f44336",
+    "wipeColor": "#03A9F4",
     "requestedPermissions": [
       "access_activity"
     ],

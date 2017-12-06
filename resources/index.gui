@@ -1,7 +1,7 @@
 <svg>
   <text id="cadence-label" class="sensor-label" x="50%" y="45">cadence</text>
-  <text id="cadence-data" class="sensor-data" x="50%" y="100">{ ... }</text>
-  
-  <text id="target-cadence-label" class="sensor-label" x="50%" y="160">target cadence</text>
-  <text id="target-cadence-data" class="sensor-data" x="50%" y="225">{ ... }</text>
+  <text id="cadence-data" class="sensor-data" x="50%" y="175"></text>
+
+  <text id="target-cadence-label" class="sensor-label" x="70%" y="225">target</text>
+  <text id="target-cadence-data" class="sensor-data" x="90%" y="225"></text>
 </svg>

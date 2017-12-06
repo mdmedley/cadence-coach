@@ -4,12 +4,22 @@
   text-anchor: middle;
   text-length: 32;
   font-size: 50;
+  font-weight: bold;
 }
 
 .sensor-data {
-  font-family: System-Light;
-  fill: red;
+  font-family: System-Regular;
+  fill: #02AFD0;
   text-anchor: middle;
   text-length: 32;
-  font-size: 60;
+  font-size: 150;
+}
+
+#target-cadence-data {
+  font-size: 32;
+  font-weight: light;
+}
+
+#target-cadence-label {
+  font-size: 30;
 }

@@ -2,7 +2,6 @@ import document from "document";
 import { vibration } from "haptics";
 import { today } from "user-activity";
 import { display } from "display";
-import * as messaging from "messaging";
 
 
 display.autoOff = false;
@@ -27,6 +26,7 @@ function setTargetCadence(val) {
 }
 
 function refreshCadence() {
+  console.log("Target cadence: " + targetCadence);
   newSteps = parseInt(today.local.steps); // Get current step count
   newCadence = (newSteps - prevSteps) * 12; // Calculate current cadence
   console.log("Current cadence: " + newCadence);
@@ -41,35 +41,15 @@ function refreshCadence() {
 }
 
 function analyzeCadence(cadence) {
-  if (cadence > 0 && cadence >= (targetCadence + 3)) {
+  if (cadence > 0 && cadence >= (targetCadence + 5)) {
     vibration.start("confirmation-max");
-  }
-  if (cadence > 0 && cadence <= (targetCadence - 3)) {
+    cadenceData.style.fill = "#F5A623";
+  } else if (cadence > 0 && cadence <= (targetCadence - 5)) {
     vibration.start("nudge-max");
+    cadenceData.style.fill = "#F5A623";
+  } else {
+    cadenceData.style.fill = "#02AFD0";
   }
-}
-
-// Listen for the onopen event
-messaging.peerSocket.onopen = function(evt) {
-  // Ready to send or receive messages
-  console.log("Socket opened");
-  messaging.peerSocket.send("Hi!");
-  targetCadence = evt.data.name;
-  console.log("Target cadence set to: " + evt.data.name);
-}
-
-// Listen for the onmessage event
-messaging.peerSocket.onmessage = function(evt) {
-  // Output the message to the console
-  targetCadence = evt.data.name;
-  console.log("Received message!");
-  console.log("Target cadence set to: " + evt.data.name);
-}
-
-// Listen for the onerror event
-messaging.peerSocket.onerror = function(err) {
-  // Handle any errors
-  console.log("Connection error: " + err.code + " - " + err.message);
 }
 
 document.onkeypress = function(e) {
@@ -85,5 +65,4 @@ document.onkeypress = function(e) {
   }
 }
 
-refreshCadence();
 setInterval(refreshCadence, 5000);
