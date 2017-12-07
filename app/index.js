@@ -21,7 +21,7 @@ targetCadenceData.text = targetCadence;
 cadenceData.text = "--";
 
 function setTargetCadence(val) {
-  targetCadence = val;
+  targetCadence = val >= 0 ? val : 0;
   targetCadenceData.text = targetCadence;
 }
 
