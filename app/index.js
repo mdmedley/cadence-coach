@@ -41,10 +41,10 @@ function refreshCadence() {
 }
 
 function analyzeCadence(cadence) {
-  if (cadence > 0 && cadence >= (targetCadence + 5)) {
+  if (cadence > 0 && cadence >= (targetCadence + 3)) {
     vibration.start("confirmation-max");
     cadenceData.style.fill = "#F5A623";
-  } else if (cadence > 0 && cadence <= (targetCadence - 5)) {
+  } else if (cadence > 0 && cadence <= (targetCadence - 3)) {
     vibration.start("nudge-max");
     cadenceData.style.fill = "#F5A623";
   } else {
