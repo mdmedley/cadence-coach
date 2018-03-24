@@ -1,0 +1,7 @@
+<svg>
+  <text id="cadence-label" class="sensor-label" x="50%" y="50">cadence</text>
+  <text id="cadence-data" class="sensor-data" x="50%" y="187"></text>
+
+  <text id="target-cadence-label" class="sensor-label" x="66%" y="250">target</text>
+  <text id="target-cadence-data" class="sensor-data" x="89%" y="250"></text>
+</svg>

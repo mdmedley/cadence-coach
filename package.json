@@ -4,9 +4,13 @@
     "appType": "app",
     "appDisplayName": "Cadence Coach",
     "iconFile": "resources/icon.png",
-    "wipeColor": "#03A9F4",
+    "wipeColor": "#03a9f4",
     "requestedPermissions": [
       "access_activity"
+    ],
+    "buildTargets": [
+      "higgs",
+      "meson"
     ],
     "i18n": {
       "en": {
