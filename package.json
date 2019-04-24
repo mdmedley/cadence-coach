@@ -10,7 +10,8 @@
     ],
     "buildTargets": [
       "higgs",
-      "meson"
+      "meson",
+      "gemini"
     ],
     "i18n": {
       "en": {
@@ -19,6 +20,10 @@
       "es": {
         "name": "Entrenador de Cadencia"
       }
-    }
+    },
+    "defaultLanguage": "en-US"
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "~3.1.0"
   }
 }
