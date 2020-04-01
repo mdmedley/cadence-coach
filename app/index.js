@@ -2,10 +2,17 @@ import document from "document";
 import { vibration } from "haptics";
 import { today } from "user-activity";
 import { display } from "display";
+import { me as device } from "device";
 
 
 display.autoOff = false;
 console.log("Cadence Coach App Started");
+console.log("type:             " + device.type);
+console.log("model name:       " + device.modelName);
+console.log("model ID:         " + device.modelId);
+console.log("body color:       " + device.bodyColor);
+console.log("firmware version: " + device.firmwareVersion);
+console.log("last synced:      " + device.lastSyncTime);
 
 
 let targetCadenceData = document.getElementById("target-cadence-data");
@@ -16,6 +23,9 @@ let prevCadence = 0;
 let newCadence = 0;
 let weightedCadence = 0;
 let targetCadence = 180;
+
+let upper = document.getElementById("upbutton")
+let lower = document.getElementById("downbutton")
 
 targetCadenceData.text = targetCadence;
 cadenceData.text = "--";
@@ -53,15 +63,25 @@ function analyzeCadence(cadence) {
 }
 
 document.onkeypress = function(e) {
-  switch (e.key) {
-    case 'up':
-      setTargetCadence(targetCadence + 1);
-      break;
-    case 'down':
-      setTargetCadence(targetCadence - 1);
-      break;
-    default:
-      // not a key to respond to
+    switch (e.key) {
+      case 'up':
+        setTargetCadence(targetCadence + 1);
+        break;
+      case 'down':
+        setTargetCadence(targetCadence - 1);
+        break;
+      default:
+        // not a key to respond to
+    }
+}
+
+if (device.modelName == "Versa 2" || device.modelName == "Versa Lite") {
+  upper.onactivate = function(e) {
+    setTargetCadence(targetCadence + 1);
+  }
+
+  lower.onactivate = function(e) {
+    setTargetCadence(targetCadence - 1);
   }
 }
 
