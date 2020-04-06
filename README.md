@@ -17,7 +17,7 @@ Train yourself to run at your optimal cadence with Cadence Coach! Running at you
 Remember not to increase your cadence too quickly to avoid injury.
 
 ### Version
-v1.2.0
+v1.3.0
 
 ### Development
 Want to contribute? Great! Fork and submit a pull request!
